@@ -28,3 +28,17 @@ services:
     - |
       cd /src
       bash -x test.sh
+  cnspec_kinetic2:
+    build:
+      dockerfile: Dockerfile.kinetic
+    image: taylorm/weakcake_kinetic
+    tty: true
+    working_dir: /src
+    volumes:
+    - .:/src
+    entrypoint:
+    - /bin/bash
+    - -c
+    - |
+      cd /src
+      bash -x test2.sh
