@@ -1,5 +1,5 @@
 # Testing cnspec
 
 ```
-make kinetic
+make build kinetic
 ```
