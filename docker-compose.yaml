@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  cnspec_xenial:
+    build:
+      dockerfile: Dockerfile.xenial
+    image: taylorm/cnspec_test:xenial
+    tty: true
+    working_dir: /src
+    volumes:
+    - .:/src
+    entrypoint:
+    - /bin/bash
+    - -c
+    - |
+      cd /src
+      bash -x test.sh
+  cnspec_kinetic:
+    build:
+      dockerfile: Dockerfile.kinetic
+    image: taylorm/cnspec_test:kinetic
+    tty: true
+    working_dir: /src
+    volumes:
+    - .:/src
+    entrypoint:
+    - /bin/bash
+    - -c
+    - |
+      cd /src
+      bash -x test.sh

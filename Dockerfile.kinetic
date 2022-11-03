@@ -1,0 +1,8 @@
+FROM ubuntu:kinetic
+
+RUN apt-get update
+RUN apt-get -y install curl jq
+RUN version=$(curl --silent "https://api.github.com/repos/mondoohq/cnspec/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")' | tr -d v) && \
+    curl -sSLO https://github.com/mondoohq/cnspec/releases/download/v${version}/cnspec_${version}_linux_amd64.deb && \
+    dpkg -i cnspec_${version}_linux_amd64.deb && \
+    rm -f cnspec_${version}_linux_amd64.deb
