@@ -1,0 +1,5 @@
+# Testing cnspec
+
+```
+make kinetic
+```
