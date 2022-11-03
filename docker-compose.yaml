@@ -3,7 +3,7 @@ services:
   cnspec_xenial:
     build:
       dockerfile: Dockerfile.xenial
-    image: taylorm/cnspec_test:xenial
+    image: taylorm/weakcake_xenial
     tty: true
     working_dir: /src
     volumes:
@@ -17,7 +17,7 @@ services:
   cnspec_kinetic:
     build:
       dockerfile: Dockerfile.kinetic
-    image: taylorm/cnspec_test:kinetic
+    image: taylorm/weakcake_kinetic
     tty: true
     working_dir: /src
     volumes:
