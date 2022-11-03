@@ -24,4 +24,4 @@ grep -i pretty_name /etc/os-release
 
 cnspec scan local --incognito --score-threshold 100 -o full -f /tmp/test.yaml --json >/tmp/out.json
 echo exit:$?
-cat /tmp/out.json | jq --monochrome-output
+jq --monochrome-output . /tmp/out.json
