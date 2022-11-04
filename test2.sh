@@ -24,6 +24,6 @@ grep -i pretty_name /etc/os-release
 
 touch /tmp/1667513535.txt
 chmod 700 /tmp/1667513535.txt
-cnspec scan local --incognito --score-threshold 100 -o full -f /tmp/test.yaml --json >/tmp/out.json
+cnspec scan local --incognito --score-threshold 100 --output full --policy-bundle /tmp/test.yaml --json >/tmp/out.json
 echo exit:$?
 jq --monochrome-output . /tmp/out.json
